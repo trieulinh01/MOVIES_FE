@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import PurchasedTicketsItem from "../../../components/Profile/PurchasedTickets/PurchasedTicketsItem";
+
 import bookingService from "../../../services/bookingService";
 import { localUserService } from "../../../services/localService";
 import { Ticket } from "../../../types/booking";
 import { Modal, message } from "antd";
 import { TbTicketOff } from "react-icons/tb";
 import { useLoading } from "../../../hooks/useSpinner";
+import PurchasedTicketsItem from "../../../components/profile/PurchasedTickets/PurchasedTicketsItem";
 
 const PurchasedTicketsPage = () => {
   const userLocal = localUserService.get()?.user;
@@ -34,7 +35,7 @@ const PurchasedTicketsPage = () => {
     confirm({
       title: "Cancel tickect",
       icon: (
-        <p className="text-red-400 text-2xl mr-2">
+        <p className="mr-2 text-2xl text-red-400">
           <TbTicketOff />
         </p>
       ),
@@ -57,12 +58,13 @@ const PurchasedTicketsPage = () => {
   return (
     <>
       <div className="mb-5">
-        <h1 className="font-bold text-white text-xl">Tickets</h1>
+        <h1 className="text-xl font-bold text-white">Tickets</h1>
       </div>
       {tickets.map((ticket, index) => (
         <div key={index} className="mb-3">
           <PurchasedTicketsItem
             showDeleteConfirm={showDeleteConfirm}
+            
             ticket={ticket}
           />
         </div>

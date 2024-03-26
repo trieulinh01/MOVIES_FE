@@ -1,4 +1,5 @@
-import RatedItem from "../../../components/Profile/RatedItem";
+import RatedItem from "../../../components/profile/RatedItem";
+
 
 const RatedPage = () => {
   return (

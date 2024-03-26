@@ -1,9 +1,9 @@
-import NavbarUser from "../components/Profile/NavbarUser";
-import ProfileTitle from "../components/Profile/ProfileTitle";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { localUserService } from "../services/localService";
 import { Outlet } from "react-router-dom";
+import NavbarUser from "../components/profile/NavbarUser";
+import ProfileTitle from "../components/profile/ProfileTitle";
 
 const ProfileLayout = () => {
   const user = localUserService.get()?.user;
@@ -15,7 +15,7 @@ const ProfileLayout = () => {
           className="absolute w-full h-[350px] top-0 left-0"
           style={{ backgroundImage: "url(./bg-2.jpg)" }}
         ></div>
-        <div className="pt-60 py-20 flex mt-5 flex-col lg:flex-row items-center md:items-start justify-between container lg:gap-0 gap-x-4 relative z-10">
+        <div className="container relative z-10 flex flex-col items-center justify-between py-20 mt-5 pt-60 lg:flex-row md:items-start lg:gap-0 gap-x-4">
           <NavbarUser />
           {/*profile user */}
           <div className="w-full lg:w-3/4">
